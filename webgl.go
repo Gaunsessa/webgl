@@ -370,7 +370,7 @@ func NewContext(canvas *js.Value, ca *ContextAttributes) (*Context, error) {
 		", premultipliedAlpha: " + boolStr(ca.PremultipliedAlpha) +
 		", preserveDrawingBuffer: " + boolStr(ca.PreserveDrawingBuffer) +
 		"}"
-	gl := canvas.Call("getContext", "webgl", attrStr)
+	gl := canvas.Call("getContext", "webgl2", attrStr)
 	if gl.Equal(js.Undefined()) {
 		gl = canvas.Call("getContext", "experimental-webgl", attrStr)
 		if gl.Equal(js.Undefined()) {
